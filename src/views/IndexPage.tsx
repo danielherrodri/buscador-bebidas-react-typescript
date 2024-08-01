@@ -4,7 +4,7 @@ export default function IndexPage() {
   useAppStore((state) => state.categories)
   return (
     <>
-      <h1>Inico</h1>
+      <h1>Iniciuo</h1>
     </>
   );
 }
