@@ -14,7 +14,7 @@ export default function Header() {
 
     const fetchCategories = useAppStore((state) => state.fetchCategories);
     const categories = useAppStore((state) => state.categories);
-    const searchRecipies = useAppStore((state) => state.searchRecipies);
+    const searchRecipes = useAppStore((state) => state.searchRecipes);
 
     useEffect(() => {
         fetchCategories();
@@ -34,7 +34,7 @@ export default function Header() {
             console.log('Todos los valores son obligatorios')
             return
         }
-        searchRecipies(searchFilters)
+        searchRecipes(searchFilters)
     }
 
     return (
