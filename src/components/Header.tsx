@@ -9,6 +9,8 @@ export default function Header() {
         category: ''
     })
 
+    const showNotification = useAppStore((state) => state.showNotification)
+
     const { pathname } = useLocation();
     const isHome = useMemo(() => pathname === "/", [pathname]);
 
@@ -31,7 +33,7 @@ export default function Header() {
         e.preventDefault()
 
         if (Object.values(searchFilters).includes('')) {
-            console.log('Todos los valores son obligatorios')
+            showNotification({ text: 'Todos los campos son obligatorios', error: true })
             return
         }
         searchRecipes(searchFilters)
